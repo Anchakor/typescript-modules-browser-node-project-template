@@ -1,0 +1,30 @@
+{
+  "name": "typescript-modules-browser-node-project-template",
+  "version": "0.1.0",
+  "description": "A TypeScript project template/scaffolding, allowing to use modules shared in both client and server (browser and node.js), with hierarchical absolute paths as module names (like namespaces in C++/C# etc.; not relative paths).",
+  /*"main": "output/examples/Example3.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "testCommand"
+  },*/
+  "repository": {
+    "type": "git",
+    "url": "gitRepository"
+  },
+  "keywords": [
+    "typescript", "project", "scaffolding", "modules", "nodejs", "node.js", "browser"
+  ],
+  "author": { "name" : "Jiří Procházka",
+      "email" : "ojirio@gmail.com",
+      "url" : "http://mud.cz/"
+    },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "requirejs": "^2.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.5"
+  }
+}

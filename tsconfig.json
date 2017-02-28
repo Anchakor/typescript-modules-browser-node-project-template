@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": ["dom","es2015"],
+    //"allowSyntheticDefaultImports": false,
+    "allowJs": false,
+    "outDir": "output",
+    "rootDir": ".",
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    //"traceResolution": true,
+    "module": "amd",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        //"src/*",
+        "examples/*",
+        "typings/*",
+        "*"
+      ]
+    },
+    //"outFile": "app.js"
+    "sourceMap": true
+  },
+  "include": [
+    "typings/*.d.ts",
+    "src/**/*.ts",
+    "examples/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
