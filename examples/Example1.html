@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Example1</title>
+  
+  <script src="../libraries/require.js"></script>
+  <script>
+  require.config({
+    baseUrl: "../output",
+    paths: {
+      "examples/Example1": (!loadPacked()) ? "examples/Example1" : "examples/Example1packed"
+    }
+  });
+  require(["examples/Example1"], function (main){ 
+    writeBaseInfo();
+
+    main.browserRun((x) => { document.getElementById('content').innerHTML = x; }); 
+  });
+  
+  //-----------
+
+  function loadPacked() {
+    var x = window.location.href.split('?');
+    return x[1] && (x[1].startsWith('packed', 0));
+  }
+  function linkToLoadTheOtherWay() {
+    var x = window.location.href.split('?');
+    return x[0] + (loadPacked() ? '' : '?packed');
+  }
+  function getDescriptionHowLoaded(reverse) {
+    var x = !loadPacked();
+    x = (reverse) ? !x : x;
+    return x ? "one JS file at a time" : "all in one JS file (packed)";
+  }
+  function writeBaseInfo() {
+    document.getElementById('baseInfo').innerHTML = `<p>Loading through RequireJS, ${getDescriptionHowLoaded(false)}. 
+    <a href="${linkToLoadTheOtherWay()}">Load ${getDescriptionHowLoaded(true)}.</a></p>`;
+  }
+  </script>
+</head>
+<body>
+  <h1 id="h">Example 1</h1>
+
+  <div id='baseInfo'></div>
+
+  <div id='content'></div>
+</body>
+</html>
+
