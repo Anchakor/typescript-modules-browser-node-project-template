@@ -8,3 +8,10 @@ A TypeScript project template/scaffolding, allowing to use modules shared in bot
 2. Run `npm install` to pull dependencies
 3. Run `node build.js debug`
 4. (Explore build options by `node build.js`)
+
+## Running examples
+
+For the server part (node.js) run `node build.js run` and choose from examples.
+
+For the client part (web browser) open the respective HTML files in the `output/` directory.
+
