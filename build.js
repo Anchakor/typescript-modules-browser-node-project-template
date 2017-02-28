@@ -31,7 +31,6 @@ function mainRun(moduleConfig) {
       break;
     default:
       echo('To build use `node build.js debug` (or "release", "simple" or "clean").');
-      echo('To run a node module use `node build.js run`.');
   }
 }
 
@@ -90,34 +89,12 @@ function getModuleConfig(moduleName) {
   return moduleConfig;
 }
 
-function run() {
-  echo('Select number of module to run:');
-  for (var i = 0; i < mainModules.length; i++) {
-    echo(`${i+1}: ${mainModules[i]}`);
-  }
-  const rl = readline.createInterface({ input: process.stdin, output: process.stdout, terminal: false });
-  rl.question('', (answer) => {
-    const moduleNumber = parseInt(answer, 10);
-    if (moduleNumber > 0 && moduleNumber <= mainModules.length) {
-      const moduleConfig = getModuleConfig(mainModules[moduleNumber-1]);
-      sh('node', [moduleConfig.nodeAppPath]);
-    } else {
-      echo('Not a valid number of module');
-    }
-    rl.close();
-  });
-}
-
 function main() {
   //sh("echo", ["arguments:"].concat(process.argv));
-  if (args[1] == 'run') {
-    run();
-  } else {
-    mainModules.forEach(function(moduleName) {
-      const moduleConfig = getModuleConfig(moduleName);
-      mainRun(moduleConfig);
-    }, this);
-  }
+  mainModules.forEach(function(moduleName) {
+    const moduleConfig = getModuleConfig(moduleName);
+    mainRun(moduleConfig);
+  }, this);
 }
 
 main();

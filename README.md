@@ -13,9 +13,9 @@ Simple build doesn't use RequireJS optimizer tool, which also packs all modules 
 
 ## Running examples
 
-For the server part (Node.js) run `node build.js run` and choose from examples.
+For the server part (Node.js) run `node output/examples/Example1NodeApp.js` for example (replace the number for other examples).
 
-For the client part (web browser) open the respective HTML files in the `output/` directory.
+For the client part (web browser) open the respective HTML files in the `output/examples/` directory.
 
 ### Example 1
 
