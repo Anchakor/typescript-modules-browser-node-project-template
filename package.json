@@ -1,7 +1,7 @@
 {
   "name": "typescript-modules-browser-node-project-template",
   "version": "0.1.0",
-  "description": "A TypeScript project template/scaffolding, allowing to use modules shared in both client and server (browser and node.js), with hierarchical absolute paths as module names (like namespaces in C++/C# etc.; not relative paths).",
+  "description": "A TypeScript project template/scaffolding, allowing to use modules shared in both client and server (browser and node.js) using RequireJS, with hierarchical absolute paths as module names (like namespaces in C++/C# etc.; not relative paths).",
   /*"main": "output/examples/Example3.js",
   "directories": {
     "example": "examples"
@@ -14,7 +14,7 @@
     "url": "gitRepository"
   },
   "keywords": [
-    "typescript", "project", "scaffolding", "modules", "nodejs", "node.js", "browser"
+    "typescript", "project", "scaffolding", "modules", "requirejs", "nodejs", "node.js", "browser"
   ],
   "author": { "name" : "Jiří Procházka",
       "email" : "ojirio@gmail.com",
