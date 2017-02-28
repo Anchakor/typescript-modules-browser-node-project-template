@@ -7,7 +7,7 @@ const echo = console.log;
 const args = process.argv.slice(1);
 
 // config files like examples/build-Example1.json
-const mainModules = ['Example1', 'Example2'];
+const mainModules = ['Example1', 'Example2', 'Example3'];
 
 function mainRun(moduleConfig) {
   switch (args[1]) {

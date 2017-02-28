@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Example3</title>
+  
+  <script src="../libraries/require.js"></script>
+  <script>
+  require.config({
+    baseUrl: "../output",
+    paths: {
+      "examples/Example3": "examples/Example3"
+    }
+  });
+  require(["examples/Example3"], function (main){ 
+    writeBaseInfo();
+
+    main.browserRun((x) => { document.getElementById('content').innerHTML = x; }); 
+  });
+  
+  //-----------
+
+  function writeBaseInfo() {
+    document.getElementById('baseInfo').innerHTML = `<p>Loading through RequireJS</p>`;
+  }
+  </script>
+</head>
+<body>
+  <h1 id="h">Example 3</h1>
+
+  <div id='baseInfo'></div>
+
+  <div id='content'></div>
+</body>
+</html>
+

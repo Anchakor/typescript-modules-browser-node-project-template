@@ -1,6 +1,6 @@
 # typescript-modules-browser-node-project-template
 
-A TypeScript project template/scaffolding, allowing to use modules shared in both client and server (browser and node.js) using RequireJS, with hierarchical absolute paths as module names (like namespaces in C++/C# etc.; not relative paths).
+A TypeScript project template/scaffolding, allowing to use modules shared in both client and server (browser and Node.js) using RequireJS, with hierarchical absolute paths as module names (like namespaces in C++/C# etc.; not relative paths).
 
 ## Building
 
@@ -13,7 +13,7 @@ Simple build doesn't use RequireJS optimizer tool, which also packs all modules 
 
 ## Running examples
 
-For the server part (node.js) run `node build.js run` and choose from examples.
+For the server part (Node.js) run `node build.js run` and choose from examples.
 
 For the client part (web browser) open the respective HTML files in the `output/` directory.
 
@@ -25,3 +25,9 @@ Basic example loading 1 module which requires 1 other module.
 
 Test of circular dependencies between modules (allowed).
 
+### Example 3
+
+Node.js HTTP server, which is queried from the client side.
+This is probably the example you will want to base your code on.
+It properly separates client and server code - the RequireJS optimizer will not work for requires of Node modules.
+You can share modules between client and server which don't require Node modules.
