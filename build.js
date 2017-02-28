@@ -44,7 +44,7 @@ function sh(command, args) {
 function rJsPack(moduleConfig, noOptimize) {
   var args = ['node_modules/requirejs/bin/r.js', '-o', 
     'baseUrl='+moduleConfig.outputDir, 
-    'name='+moduleConfig.mainModule, 
+    'name='+moduleConfig.browserModule, 
     'out='+moduleConfig.packOutputFilePath];
   if (noOptimize) {
     args.push("optimize=none")
@@ -73,7 +73,7 @@ class Config {
   constructor() {
     this.outputDir = 'output';
     this.packOutputFileName = 'app_client.js';
-    this.mainModule = 'examples/Example1';
+    this.browserModule = 'examples/Example1';
     this.nodeApp = 'examples/Example1NodeApp.js';
     //this.packOutputFilePath = path.join(outputDir, packOutputFileName)
     //this.nodeAppPath = path.join(outputDir, nodeApp)

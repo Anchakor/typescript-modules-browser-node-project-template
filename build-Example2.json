@@ -1,6 +1,6 @@
 {
   "outputDir": "output",
   "packOutputFileName": "examples/Example2packed.js",
-  "mainModule": "examples/Example2",
+  "browserModule": "examples/Example2",
   "nodeApp": "examples/Example2NodeApp.js"
 }
