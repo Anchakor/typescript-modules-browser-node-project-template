@@ -1,6 +1,6 @@
 {
   "outputDir": "output",
-  "packOutputFileName": "examples/Example3packed.js",
-  "browserModule": "examples/Example3",
+  "packOutputFileName": "examples/Example3ClientPacked.js",
+  "browserModule": "examples/Example3Client",
   "nodeApp": "examples/Example3NodeApp.js"
 }

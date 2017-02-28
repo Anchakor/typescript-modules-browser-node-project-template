@@ -10,10 +10,10 @@
   require.config({
     baseUrl: "../output",
     paths: {
-      "examples/Example3": "examples/Example3packed"
+      "examples/Example3Client": "examples/Example3ClientPacked"
     }
   });
-  require(["examples/Example3"], function (main){ 
+  require(["examples/Example3Client"], function (main){ 
     writeBaseInfo();
 
     main.browserRun((x) => { document.getElementById('content').innerHTML = x; }); 
