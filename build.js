@@ -6,8 +6,8 @@ const path = require('path');
 const echo = console.log;
 const args = process.argv.slice(1);
 
-// config files like examples/build-Example1.json
-const mainModules = ['Example1', 'Example2', 'Example3'];
+// modify this to control what gets built
+const modulesToBuild = ['build-Example1.json', 'build-Example2.json', 'build-Example3.json'];
 
 function mainRun(moduleConfig) {
   switch (args[1]) {
@@ -80,8 +80,7 @@ class Config {
   }
 }
 
-function getModuleConfig(moduleName) {
-  const moduleConfigFile = path.join('', 'build-'+moduleName+'.json');
+function getModuleConfig(moduleConfigFile) {
   const fileContents = fs.readFileSync(moduleConfigFile);
   var moduleConfig = JSON.parse(fileContents); // as Config
   moduleConfig.packOutputFilePath = path.join(moduleConfig.outputDir, moduleConfig.packOutputFileName)
@@ -91,8 +90,8 @@ function getModuleConfig(moduleName) {
 
 function main() {
   //sh("echo", ["arguments:"].concat(process.argv));
-  mainModules.forEach(function(moduleName) {
-    const moduleConfig = getModuleConfig(moduleName);
+  modulesToBuild.forEach(function(moduleConfigFile) {
+    const moduleConfig = getModuleConfig(moduleConfigFile);
     mainRun(moduleConfig);
   }, this);
 }
